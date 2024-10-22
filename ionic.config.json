@@ -1,0 +1,7 @@
+{
+  "name": "musiktherapy",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
