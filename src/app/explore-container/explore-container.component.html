@@ -1,4 +1,17 @@
-<div id="container">
-  <strong>{{ name }}</strong>
-  <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+<input type="file" (change)="onFileSelected($event)" accept="audio/mp3" />
+<button (click)="uploadMusic()">Upload MP3</button>
+<div *ngIf="musicList.length > 0; else noMusic">
+  <h2>Your Music</h2>
+  <ul>
+    <li *ngFor="let audioPath of musicList">
+      <audio controls>
+        <source [src]="audioPath" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </li>
+  </ul>
 </div>
+<ng-template #noMusic>
+  <p>No music uploaded yet.</p>
+</ng-template>

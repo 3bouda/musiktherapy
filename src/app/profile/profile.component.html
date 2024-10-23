@@ -1,0 +1,38 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Back to home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="updateProfile()" class="vcs">
+    <ion-avatar (click)="selectImage()">
+      <img
+        alt="User's profile picture"
+        [src]="currentUser.imagePath ? currentUser.imagePath : 'https://ionicframework.com/docs/img/demos/avatar.svg'" />
+    </ion-avatar>
+
+    <!-- Hidden file input -->
+    <input type="file" (change)="onFileSelected($event)" hidden #fileInput>
+
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input type="text" [(ngModel)]="currentUser.name" name="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Last Name</ion-label>
+      <ion-input type="text" [(ngModel)]="currentUser.lastName" name="lastName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" [(ngModel)]="currentUser.email" name="email"></ion-input>
+    </ion-item>
+
+    <div class="hrend">
+      <ion-button type="submit">Edit</ion-button>
+    </div>
+  </form>
+</ion-content>
