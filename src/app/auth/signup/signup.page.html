@@ -5,16 +5,25 @@
 </ion-header>
 
 <ion-content>
-  <form (ngSubmit)="onSignup()">
-    <ion-item>
-      <ion-label position="floating">Username</ion-label>
-      <ion-input type="text" [(ngModel)]="email" name="username"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
-    </ion-item>
-    <ion-button expand="full" type="submit">Sign Up</ion-button>
-  </form>
-  <ion-button expand="full" routerLink="/login">Log In</ion-button>
+  <ion-card>
+    <ion-card-content>
+      <form (ngSubmit)="onSignup()" class="vcs">
+        <ion-item>
+          <ion-label position="floating">Username</ion-label>
+          <ion-input type="text" [(ngModel)]="email" name="username"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+        </ion-item>
+        <div class="hrend">
+          <ion-button type="submit">Sign Up</ion-button>
+        </div>
+      </form>
+    </ion-card-content>
+  </ion-card>
+  <div class="hrcenter">
+    <ion-button fill="clear" routerLink="/login">Log In</ion-button>
+  </div>
 </ion-content>
+
